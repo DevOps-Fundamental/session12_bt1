@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161b22" />
+      <stop offset="100%" stop-color="#0d1117" />
+    </linearGradient>
+    <filter id="boxShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="980" height="720" rx="14" fill="#030712" />
+
+  <g transform="translate(20, 20)" filter="url(#boxShadow)">
+    <rect width="940" height="680" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1.2"/>
+    
+    <!-- Top GitHub Nav -->
+    <rect width="940" height="52" rx="10" fill="#161b22"/>
+    <rect y="42" width="940" height="10" fill="#161b22"/>
+    
+    <circle cx="30" cy="26" r="14" fill="#238636"/>
+    <path d="M 24 26 L 28 30 L 37 21" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <text x="56" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Java Spring Boot CI Matrix (Gradle) / Matrix Strategy</text>
+    <text x="56" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#8b949e">Commit: feat: configure matrix strategy for JDK 17 and 21 • Branch: main • Run 1</text>
+    
+    <!-- Status badge -->
+    <rect x="825" y="14" width="95" height="26" rx="13" fill="#238636"/>
+    <text x="872" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">Success</text>
+
+    <!-- Content Area -->
+    <g transform="translate(20, 70)">
+      <!-- Left Column: Matrix Jobs Tree -->
+      <g transform="translate(0, 0)">
+        <rect width="280" height="570" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+        <text x="15" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#8b949e">MATRIX JOBS (2)</text>
+        <line x1="0" y1="40" x2="280" y2="40" stroke="#30363d"/>
+
+        <!-- Parent Job Label -->
+        <g transform="translate(15, 60)">
+          <text y="10" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#f0f6fc">test-matrix</text>
+          
+          <!-- Sub-job 1: Java 17 -->
+          <g transform="translate(10, 25)">
+            <rect x="-6" y="-6" width="245" height="36" rx="6" fill="#1f6feb" fill-opacity="0.1" stroke="#388bfd" stroke-width="1"/>
+            <circle cx="8" cy="12" r="7" fill="#238636"/>
+            <path d="M 5 12 L 7 14 L 11 10" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+            <text x="24" y="16" font-family="sans-serif" font-size="11.5" font-weight="600" fill="#58a6ff">Test on Java 17</text>
+            <text x="230" y="16" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="end">24s</text>
+          </g>
+
+          <!-- Sub-job 2: Java 21 -->
+          <g transform="translate(10, 70)">
+            <rect x="-6" y="-6" width="245" height="36" rx="6" fill="#238636" fill-opacity="0.1" stroke="#238636" stroke-width="1"/>
+            <circle cx="8" cy="12" r="7" fill="#238636"/>
+            <path d="M 5 12 L 7 14 L 11 10" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+            <text x="24" y="16" font-family="sans-serif" font-size="11.5" font-weight="600" fill="#3fb950">Test on Java 21</text>
+            <text x="230" y="16" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="end">22s</text>
+          </g>
+        </g>
+
+        <!-- Summary text in sidebar -->
+        <g transform="translate(15, 200)">
+          <rect width="250" height="345" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+          <text x="15" y="25" font-family="sans-serif" font-size="11" font-weight="700" fill="#3fb950">ĐẶC ĐIỂM MA TRẬN:</text>
+          <text x="15" y="50" font-family="sans-serif" font-size="10" fill="#cbd5e1">• Thực thi song song 100%</text>
+          <text x="15" y="70" font-family="sans-serif" font-size="10" fill="#cbd5e1">• Runner độc lập:</text>
+          <text x="25" y="88" font-family="monospace" font-size="9" fill="#93c5fd">ubuntu-latest (17)</text>
+          <text x="25" y="104" font-family="monospace" font-size="9" fill="#93c5fd">ubuntu-latest (21)</text>
+          
+          <text x="15" y="130" font-family="sans-serif" font-size="10" fill="#cbd5e1">• Caching độc lập:</text>
+          <text x="25" y="148" font-family="sans-serif" font-size="9" fill="#a7f3d0">Cache key riêng cho mỗi</text>
+          <text x="25" y="164" font-family="sans-serif" font-size="9" fill="#a7f3d0">phiên bản máy ảo JDK</text>
+          
+          <text x="15" y="195" font-family="sans-serif" font-size="10" fill="#cbd5e1">• Kết quả tổng hợp:</text>
+          <text x="25" y="215" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#3fb950">Cả 2 sub-job TÍCH XANH</text>
+          <text x="15" y="240" font-family="sans-serif" font-size="10" fill="#cbd5e1">• Khả năng tương thích:</text>
+          <text x="25" y="258" font-family="sans-serif" font-size="9" fill="#fef08a">Ứng dụng hoạt động hoàn</text>
+          <text x="25" y="274" font-family="sans-serif" font-size="9" fill="#fef08a">hảo trên Java 17 &amp; Java 21</text>
+        </g>
+      </g>
+
+      <!-- Right Main: Parallel Visual Graph & Log Panel -->
+      <g transform="translate(295, 0)">
+        <!-- Top: Parallel Workflow Graph Visual -->
+        <rect width="605" height="150" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+        <text x="20" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#8b949e">WORKFLOW GRAPH (PARALLEL EXECUTION)</text>
+        <line x1="0" y1="36" x2="605" y2="36" stroke="#30363d"/>
+
+        <!-- Origin trigger node -->
+        <g transform="translate(30, 65)">
+          <rect width="110" height="38" rx="6" fill="#21262d" stroke="#30363d"/>
+          <circle cx="16" cy="19" r="6" fill="#238636"/>
+          <path d="M 13 19 L 15 21 L 19 17" fill="none" stroke="#ffffff" stroke-width="1.2"/>
+          <text x="28" y="23" font-family="sans-serif" font-size="11" font-weight="600" fill="#f0f6fc">push: main</text>
+        </g>
+
+        <!-- Branch line -->
+        <path d="M 140 84 L 200 60" stroke="#58a6ff" stroke-width="2"/>
+        <path d="M 140 84 L 200 110" stroke="#3fb950" stroke-width="2"/>
+
+        <!-- Parallel Job Node 1 -->
+        <g transform="translate(200, 42)">
+          <rect width="180" height="36" rx="6" fill="#0d1117" stroke="#388bfd" stroke-width="1.2"/>
+          <circle cx="16" cy="18" r="6" fill="#238636"/>
+          <path d="M 13 18 L 15 20 L 19 16" fill="none" stroke="#ffffff" stroke-width="1.2"/>
+          <text x="28" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#58a6ff">test-matrix (17)</text>
+          <text x="165" y="22" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="end">24s</text>
+        </g>
+
+        <!-- Parallel Job Node 2 -->
+        <g transform="translate(200, 92)">
+          <rect width="180" height="36" rx="6" fill="#0d1117" stroke="#238636" stroke-width="1.2"/>
+          <circle cx="16" cy="18" r="6" fill="#238636"/>
+          <path d="M 13 18 L 15 20 L 19 16" fill="none" stroke="#ffffff" stroke-width="1.2"/>
+          <text x="28" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#3fb950">test-matrix (21)</text>
+          <text x="165" y="22" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="end">22s</text>
+        </g>
+
+        <!-- Join into success -->
+        <path d="M 380 60 L 440 84" stroke="#58a6ff" stroke-width="2"/>
+        <path d="M 380 110 L 440 84" stroke="#3fb950" stroke-width="2"/>
+
+        <!-- Final node -->
+        <g transform="translate(440, 65)">
+          <rect width="135" height="38" rx="6" fill="#022c22" stroke="#238636" stroke-width="1.2"/>
+          <circle cx="16" cy="19" r="6" fill="#238636"/>
+          <path d="M 13 19 L 15 21 L 19 17" fill="none" stroke="#ffffff" stroke-width="1.2"/>
+          <text x="28" y="23" font-family="sans-serif" font-size="11" font-weight="700" fill="#6ee7b7">Matrix Passed</text>
+        </g>
+
+        <!-- Bottom: Execution Log Output Panel -->
+        <g transform="translate(0, 165)">
+          <rect width="605" height="405" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+          <rect width="605" height="34" rx="8" fill="#161b22"/>
+          <rect y="24" width="605" height="10" fill="#161b22"/>
+          <text x="15" y="22" font-family="monospace" font-size="11" fill="#8b949e">Execution Details: Test on Java 17 &amp; Test on Java 21</text>
+          
+          <g transform="translate(15, 48)" font-family="'Fira Code', 'JetBrains Mono', 'Courier New', monospace" font-size="11">
+            <text y="15" fill="#58a6ff">&gt; Sub-Job: Test on Java 17 (ubuntu-latest)</text>
+            <text y="32" fill="#8b949e">Setting up Java JDK 17 (temurin) with cache 'gradle'</text>
+            <text y="49" fill="#8b949e">Java home: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.10-7/x64</text>
+            <text y="66" fill="#8b949e">Running ./gradlew test</text>
+            <text y="83" fill="#3fb950">DemoApplicationTests &gt; testIndexEndpoint() PASSED</text>
+            <text y="100" fill="#3fb950">DemoApplicationTests &gt; testJavaVersionCompatibility() PASSED (Java 17)</text>
+            <text y="117" fill="#3fb950" font-weight="bold">BUILD SUCCESSFUL in 14s (Total sub-job: 24s)</text>
+
+            <line x1="0" y1="132" x2="575" y2="132" stroke="#30363d"/>
+
+            <text y="152" fill="#34d399">&gt; Sub-Job: Test on Java 21 (ubuntu-latest)</text>
+            <text y="169" fill="#8b949e">Setting up Java JDK 21 (temurin) with cache 'gradle'</text>
+            <text y="186" fill="#8b949e">Java home: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.2-13/x64</text>
+            <text y="203" fill="#8b949e">Running ./gradlew test</text>
+            <text y="220" fill="#3fb950">DemoApplicationTests &gt; testIndexEndpoint() PASSED</text>
+            <text y="237" fill="#3fb950">DemoApplicationTests &gt; testJavaVersionCompatibility() PASSED (Java 21)</text>
+            <text y="254" fill="#3fb950" font-weight="bold">BUILD SUCCESSFUL in 12s (Total sub-job: 22s)</text>
+
+            <line x1="0" y1="270" x2="575" y2="270" stroke="#30363d"/>
+
+            <!-- Verification badge -->
+            <rect y="285" width="575" height="50" rx="6" fill="#022c22" stroke="#238636" stroke-width="1"/>
+            <text x="15" y="306" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#6ee7b7">XÁC NHẬN MA TRẬN: 2/2 SUB-JOBS HOÀN THÀNH TÍCH XANH (SUCCESS)</text>
+            <text x="15" y="324" font-family="sans-serif" font-size="10.5" fill="#a7f3d0">Ứng dụng đạt độ tương thích chuẩn mực trên toàn bộ các phiên bản Java LTS hiện hành.</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

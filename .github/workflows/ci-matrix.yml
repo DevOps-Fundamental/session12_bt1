@@ -1,0 +1,29 @@
+name: Java Spring Boot CI Matrix (Gradle)
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test-matrix:
+    name: Test on Java ${{ matrix.java-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: ['17', '21']
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v5
+
+      - name: Cài đặt Java JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v5
+        with:
+          java-version: ${{ matrix.java-version }}
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Cấp quyền cho Gradle Wrapper
+        run: chmod +x gradlew
+
+      - name: Thực thi JUnit Test với Gradle
+        run: ./gradlew test

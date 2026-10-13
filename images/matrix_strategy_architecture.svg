@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="gitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    <linearGradient id="matGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="j17Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="j21Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="620" fill="url(#bgGrad)" rx="16"/>
+
+  <rect x="25" y="20" width="950" height="60" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="500" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="700" fill="#f8fafc" text-anchor="middle">KIẾN TRÚC MA TRẬN KIỂM THỬ (MATRIX STRATEGY) ĐA PHIÊN BẢN JDK</text>
+  <text x="500" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">GitHub Actions Parallel Execution • JDK 17 &amp; JDK 21 Temurin • Gradle Dependency Caching</text>
+
+  <!-- Step 1: Git Event & Matrix Definition -->
+  <g transform="translate(35, 105)">
+    <rect width="250" height="380" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect width="250" height="40" rx="12" fill="url(#matGrad)"/>
+    <text x="125" y="26" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">1. MATRIX CONFIGURATION</text>
+
+    <g transform="translate(15, 55)">
+      <rect width="220" height="80" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="110" y="22" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#c084fc" text-anchor="middle">Workflow Kích hoạt</text>
+      <text x="110" y="44" font-family="monospace" font-size="9.5" fill="#fef08a" text-anchor="middle">.github/workflows/</text>
+      <text x="110" y="60" font-family="monospace" font-size="9.5" fill="#fef08a" text-anchor="middle">ci-matrix.yml</text>
+    </g>
+
+    <g transform="translate(15, 145)">
+      <rect width="220" height="210" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="110" y="22" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#c084fc" text-anchor="middle">Khai báo Matrix Strategy</text>
+      <text x="12" y="46" font-family="monospace" font-size="9" fill="#38bdf8">strategy:</text>
+      <text x="24" y="66" font-family="monospace" font-size="9" fill="#38bdf8">matrix:</text>
+      <text x="36" y="86" font-family="monospace" font-size="9" fill="#fef08a">java-version:</text>
+      <text x="48" y="106" font-family="monospace" font-size="9.5" font-weight="700" fill="#6ee7b7">['17', '21']</text>
+      
+      <line x1="12" y1="122" x2="208" y2="122" stroke="#334155"/>
+      <text x="110" y="142" font-family="sans-serif" font-size="8.5" fill="#cbd5e1" text-anchor="middle">Tự động nhân bản Job thành</text>
+      <text x="110" y="160" font-family="sans-serif" font-size="9" font-weight="700" fill="#fef08a" text-anchor="middle">2 Sub-jobs Chạy Song Song</text>
+      <text x="110" y="180" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">Không cần lặp lại mã YAML</text>
+      <text x="110" y="196" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">Tối ưu hóa thời gian chờ</text>
+    </g>
+  </g>
+
+  <!-- Connectors from Matrix Coordinator to 2 branches -->
+  <path d="M 285 240 L 325 200" stroke="#0284c7" stroke-width="2.5"/>
+  <polygon points="320,195 330,198 325,207" fill="#0284c7"/>
+
+  <path d="M 285 360 L 325 400" stroke="#10b981" stroke-width="2.5"/>
+  <polygon points="325,393 330,402 320,405" fill="#10b981"/>
+
+  <!-- Sub-Job 1: Java 17 -->
+  <g transform="translate(330, 105)">
+    <rect width="360" height="180" rx="12" fill="#1e293b" stroke="#0284c7" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect width="360" height="36" rx="12" fill="url(#j17Grad)"/>
+    <text x="180" y="24" font-family="sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">SUB-JOB 1: Test on Java 17 (ubuntu-latest)</text>
+
+    <g transform="translate(15, 48)" font-family="monospace" font-size="9.5">
+      <text y="16" fill="#38bdf8">uses: actions/setup-java@v5</text>
+      <text y="34" fill="#cbd5e1">with: java-version: '17', distribution: 'temurin'</text>
+      <text y="52" fill="#fef08a">      cache: 'gradle' (Tận dụng bộ nhớ đệm)</text>
+      <text y="74" fill="#38bdf8">run: ./gradlew test</text>
+      <rect y="88" width="330" height="32" rx="5" fill="#022c22" stroke="#10b981"/>
+      <text x="165" y="108" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#6ee7b7" text-anchor="middle">KẾT QUẢ: PASSED in 24s (Tích Xanh)</text>
+    </g>
+  </g>
+
+  <!-- Sub-Job 2: Java 21 -->
+  <g transform="translate(330, 305)">
+    <rect width="360" height="180" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect width="360" height="36" rx="12" fill="url(#j21Grad)"/>
+    <text x="180" y="24" font-family="sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">SUB-JOB 2: Test on Java 21 (ubuntu-latest)</text>
+
+    <g transform="translate(15, 48)" font-family="monospace" font-size="9.5">
+      <text y="16" fill="#34d399">uses: actions/setup-java@v5</text>
+      <text y="34" fill="#cbd5e1">with: java-version: '21', distribution: 'temurin'</text>
+      <text y="52" fill="#fef08a">      cache: 'gradle' (Tận dụng bộ nhớ đệm)</text>
+      <text y="74" fill="#34d399">run: ./gradlew test</text>
+      <rect y="88" width="330" height="32" rx="5" fill="#022c22" stroke="#10b981"/>
+      <text x="165" y="108" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#6ee7b7" text-anchor="middle">KẾT QUẢ: PASSED in 22s (Tích Xanh)</text>
+    </g>
+  </g>
+
+  <!-- Connectors to Summary Box -->
+  <path d="M 690 195 L 725 240" stroke="#0284c7" stroke-width="2.5"/>
+  <path d="M 690 395 L 725 350" stroke="#10b981" stroke-width="2.5"/>
+
+  <!-- Step 3: Combined Matrix Summary -->
+  <g transform="translate(725, 105)">
+    <rect width="240" height="380" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="1.8" filter="url(#shadow)"/>
+    <rect width="240" height="40" rx="12" fill="url(#j21Grad)"/>
+    <text x="120" y="26" font-family="sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">KẾT QUẢ MA TRẬN TỔNG</text>
+
+    <!-- Success Badge -->
+    <g transform="translate(15, 55)">
+      <rect width="210" height="130" rx="8" fill="#022c22" stroke="#10b981" stroke-width="1.5"/>
+      <circle cx="105" cy="38" r="22" fill="#10b981"/>
+      <path d="M 96 38 L 102 44 L 115 31" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+      <text x="105" y="80" font-family="sans-serif" font-size="12" font-weight="700" fill="#6ee7b7" text-anchor="middle">ALL JOBS PASSED</text>
+      <text x="105" y="100" font-family="sans-serif" font-size="9" fill="#a7f3d0" text-anchor="middle">100% Tương thích JDK 17 &amp; 21</text>
+      <text x="105" y="118" font-family="sans-serif" font-size="8.5" fill="#fef08a" text-anchor="middle">Tổng thời gian: ~25s</text>
+    </g>
+
+    <g transform="translate(15, 200)">
+      <rect width="210" height="155" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="105" y="22" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#34d399" text-anchor="middle">Ưu điểm Chiến lược</text>
+      <text x="12" y="46" font-family="sans-serif" font-size="8.5" fill="#cbd5e1">• Chạy song song không tốn</text>
+      <text x="20" y="62" font-family="sans-serif" font-size="8.5" fill="#cbd5e1">thêm thời gian chờ</text>
+      <text x="12" y="82" font-family="sans-serif" font-size="8.5" fill="#cbd5e1">• Đảm bảo tính tương thích</text>
+      <text x="20" y="98" font-family="sans-serif" font-size="8.5" fill="#cbd5e1">khi nâng cấp Java LTS</text>
+      <text x="12" y="118" font-family="sans-serif" font-size="8.5" fill="#cbd5e1">• Chia sẻ bộ nhớ đệm cache</text>
+      <text x="105" y="142" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">LTS Compatibility Assured</text>
+    </g>
+  </g>
+
+  <!-- Bottom workflow summary -->
+  <g transform="translate(35, 505)">
+    <rect width="930" height="95" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="30" y="28" font-family="sans-serif" font-size="12" font-weight="700" fill="#38bdf8">TỔNG KẾT CHIẾN LƯỢC MATRIX TRONG DEVOPS HIỆN ĐẠI:</text>
+    <text x="30" y="50" font-family="sans-serif" font-size="11.5" fill="#cbd5e1">• Cho phép kiểm tra độ ổn định của ứng dụng trên cả 2 phiên bản Java LTS chủ đạo (17 và 21) cùng lúc.</text>
+    <text x="30" y="70" font-family="sans-serif" font-size="11.5" fill="#cbd5e1">• Nhờ thực thi song song (Parallelism) và Gradle Cache, thời gian hoàn thành toàn bộ ma trận tương đương với khi chỉ chạy 1 Job đơn lẻ.</text>
+  </g>
+</svg>
